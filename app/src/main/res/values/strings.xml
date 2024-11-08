@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ModernEcommerceApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip">Skip</string>
+    <string name="pages">/3</string>
+    <string name="prev">Prev</string>
+    <string name="next">Next</string>
+    <string name="onboarding_title_1">Choose Products</string>
+    <string name="onboarding_description_1">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</string>
+    <string name="onboarding_title_2">Make Payment</string>
+    <string name="onboarding_description_2">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</string>
+    <string name="onboarding_title_3">Get Your Order</string>
+    <string name="onboarding_description_3">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</string>
+    <string name="get_started">Get Started</string>
+    <string name="welcome_back">Welcome\nBack!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create An Account</string>
+    <string name="create_an_account">Create An \nAccount</string>
+    <string name="signup"><u>Sign Up</u></string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="accept_condition">By clicking the <font color="#F83758">Register</font> button, you agree to the public offer</string>
+    <string name="already_hv_account">I Already Have an Account</string>
+    <string name="forget_yr_password">Forgot \npassword?</string>
+    <string name="forget_text"><font color="#F83758">* </font> We will send you a message to set or reset your new password</string>
+    <string name="submit">Submit</string>
+    <string name="find_here">Find it here, buy it now!</string>
+    <string name="text">You want Authentic, here you go!</string>
+</resources>

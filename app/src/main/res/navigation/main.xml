@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/splash_navigation">
+
+    <fragment
+        android:id="@+id/splash_navigation"
+        android:name="com.marwa.modernecommerceapp.presentation.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splash_navigation_to_onboarding_navigation"
+            app:destination="@id/onboarding_navigation" />
+        <action
+            android:id="@+id/action_splash_navigation_to_home_navigation"
+            app:destination="@id/home_navigation" />
+        <action
+            android:id="@+id/action_splash_navigation_to_login_navigation"
+            app:destination="@id/login_navigation" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding_navigation"
+        android:name="com.marwa.modernecommerceapp.presentation.onboarding.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboarding_navigation_to_home_navigation"
+            app:destination="@id/home_navigation" />
+        <action
+            android:id="@+id/action_onboarding_navigation_to_getStarted_navigation"
+            app:destination="@id/getStarted_navigation" />
+        <action
+            android:id="@+id/action_onboarding_navigation_to_login_navigation"
+            app:destination="@id/login_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_navigation"
+        android:name="com.marwa.modernecommerceapp.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/forget_navigation"
+        android:name="com.marwa.modernecommerceapp.presentation.auth.forget.ForgetFragment"
+        android:label="ForgetFragment"
+        tools:layout="@layout/fragment_forget" />
+    <fragment
+        android:id="@+id/login_navigation"
+        android:name="com.marwa.modernecommerceapp.presentation.auth.login.LoginFragment"
+        android:label="fragment_forget"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_navigation_to_register_navigation"
+            app:destination="@id/register_navigation" />
+        <action
+            android:id="@+id/action_login_navigation_to_forget_navigation"
+            app:destination="@id/forget_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/getStarted_navigation"
+        android:name="com.marwa.modernecommerceapp.presentation.splash.GetStartedFragment"
+        android:label="fragment_get_started"
+        tools:layout="@layout/fragment_get_started" />
+    <fragment
+        android:id="@+id/register_navigation"
+        android:name="com.marwa.modernecommerceapp.presentation.auth.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_navigation_to_login_navigation"
+            app:destination="@id/login_navigation" />
+    </fragment>
+</navigation>
