@@ -1,5 +1,7 @@
 package com.marwa.modernecommerceapp.core.di
 
+import android.content.Context
+import android.content.SharedPreferences
 import com.marwa.modernecommerceapp.data.datasource.local.PreferenceHelper
 import com.marwa.modernecommerceapp.data.datasource.remote.interfaces.IRemoteAuthDS
 import com.marwa.modernecommerceapp.data.datasource.remote.network.ApiServices.Companion.provideApiService
@@ -12,7 +14,9 @@ import com.marwa.modernecommerceapp.domain.repository.IAuthRepository
 import com.marwa.modernecommerceapp.domain.repository.impl.AuthRepository
 import com.marwa.modernecommerceapp.presentation.auth.login.LoginViewModel
 import com.marwa.modernecommerceapp.presentation.auth.register.RegisterViewModel
+import com.marwa.modernecommerceapp.presentation.onboarding.OnboardingViewModel
 import com.marwa.modernecommerceapp.presentation.splash.SplashViewModel
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -20,9 +24,10 @@ val viewModelModule = module {
     viewModel { SplashViewModel(get()) }
     viewModel { LoginViewModel(get()) }
     viewModel { RegisterViewModel(get()) }
+    viewModel { OnboardingViewModel(get()) }
 }
 
-val  repositoryModule = module {
+val repositoryModule = module {
     single<IAuthRepository> { AuthRepository(get(), get()) }
 }
 
@@ -31,12 +36,13 @@ val dataSourceModule = module {
 }
 
 val networkModule = module {
-    single<AuthInterceptor> {  AuthInterceptor(get()) }
+    single<AuthInterceptor> { AuthInterceptor(get()) }
     single { provideOkHttpClient(get()) }
     single { provideRetrofit(get()) }
     single { provideApiService(get()) }
 }
 
 val preferenceModule = module {
-    single { PreferenceHelper() }
+    single { androidContext().getSharedPreferences("modern", Context.MODE_PRIVATE) }
+    single { PreferenceHelper(get()) }
 }

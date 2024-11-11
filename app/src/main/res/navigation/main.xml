@@ -57,12 +57,22 @@
         <action
             android:id="@+id/action_login_navigation_to_forget_navigation"
             app:destination="@id/forget_navigation" />
+        <action
+            android:id="@+id/action_login_navigation_to_home_navigation"
+            app:destination="@id/home_navigation" />
     </fragment>
     <fragment
         android:id="@+id/getStarted_navigation"
         android:name="com.marwa.modernecommerceapp.presentation.splash.GetStartedFragment"
         android:label="fragment_get_started"
-        tools:layout="@layout/fragment_get_started" />
+        tools:layout="@layout/fragment_get_started" >
+        <action
+            android:id="@+id/action_getStarted_navigation_to_login_navigation"
+            app:destination="@id/login_navigation" />
+        <action
+            android:id="@+id/action_getStarted_navigation_to_home_navigation"
+            app:destination="@id/home_navigation" />
+    </fragment>
     <fragment
         android:id="@+id/register_navigation"
         android:name="com.marwa.modernecommerceapp.presentation.auth.register.RegisterFragment"
@@ -71,5 +81,8 @@
         <action
             android:id="@+id/action_register_navigation_to_login_navigation"
             app:destination="@id/login_navigation" />
+        <action
+            android:id="@+id/action_register_navigation_to_home_navigation"
+            app:destination="@id/home_navigation" />
     </fragment>
 </navigation>

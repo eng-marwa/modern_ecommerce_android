@@ -29,4 +29,12 @@
     <string name="submit">Submit</string>
     <string name="find_here">Find it here, buy it now!</string>
     <string name="text">You want Authentic, here you go!</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="register_success">Account is created successfully</string>
+    <string name="empty" />
+    <string name="search_for_any_product">Search any product</string>
+    <string name="all_features">All Features</string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
 </resources>

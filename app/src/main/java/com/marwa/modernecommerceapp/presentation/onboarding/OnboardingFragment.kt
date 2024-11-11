@@ -9,8 +9,10 @@ import androidx.navigation.fragment.findNavController
 import com.marwa.modernecommerceapp.R
 import com.marwa.modernecommerceapp.databinding.FragmentOnboardingBinding
 import com.marwa.modernecommerceapp.domain.entity.OnboardingData
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class OnboardingFragment : Fragment() {
+    private val viewModel by viewModel<OnboardingViewModel>()
     private var pagePosition = 0;
     private lateinit var binding: FragmentOnboardingBinding
     private val onboardingList = listOf<OnboardingData>(
@@ -50,6 +52,7 @@ class OnboardingFragment : Fragment() {
         updateUI()
 
         binding.btnNext.setOnClickListener {
+            viewModel.setFirstUse(false)
             if (pagePosition == 2) {
 //                findNavController().navigate(R.id.action_onboarding_navigation_to_home_navigation)
                 findNavController().navigate(R.id.action_onboarding_navigation_to_getStarted_navigation                )
@@ -66,7 +69,12 @@ class OnboardingFragment : Fragment() {
         }
 
         binding.btnSkip.setOnClickListener {
-           findNavController().navigate(R.id.action_onboarding_navigation_to_home_navigation)
+            viewModel.setFirstUse(false)
+            if (!viewModel.isLoggedIn()) {
+                findNavController().navigate(R.id.action_onboarding_navigation_to_login_navigation)
+            } else {
+                findNavController().navigate(R.id.action_onboarding_navigation_to_home_navigation)
+            }
         }
 
 

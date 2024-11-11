@@ -1,5 +1,6 @@
 package com.marwa.modernecommerceapp.data.datasource.remote.network
 
+import com.marwa.modernecommerceapp.data.model.AuthResponse
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.http.Field
@@ -18,7 +19,7 @@ interface ApiServices {
     suspend fun login(
         @Field("email") email: String,
         @Field("password") password: String
-    ): Response<Any>
+    ): Response<AuthResponse>
 
     @FormUrlEncoded
     @POST("register")
@@ -27,5 +28,5 @@ interface ApiServices {
         @Field("phone") phone: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ): Response<Any>
+    ): Response<AuthResponse>
 }

@@ -77,11 +77,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
-        android:gravity="end"
         android:fontFamily="@font/montserrat"
-        android:textSize="@dimen/_10ssp"
+        android:gravity="end"
         android:text="@string/forget_password"
         android:textColor="@color/pinkF8"
+        android:textSize="@dimen/_10ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
 
@@ -127,4 +127,17 @@
             android:textColor="@color/pinkF8"
             android:textSize="@dimen/_12ssp" />
     </LinearLayout>
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/loader"
+        style="?android:progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/pinkF8"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
